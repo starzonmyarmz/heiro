@@ -2,7 +2,7 @@
   "name": "gamedevjs-jam-2021",
   "version": "1.0.0",
   "scripts": {
-    "b": "eleventy"
+    "b": "eleventy",
     "s": "eleventy --serve"
   },
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
