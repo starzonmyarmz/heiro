@@ -1,3 +1,5 @@
-html {
-  background: red;
-}
+@import "./vars.scss";
+@import "./base.scss";
+@import "./lose.scss";
+@import "./timer.scss";
+@import "./title.scss";

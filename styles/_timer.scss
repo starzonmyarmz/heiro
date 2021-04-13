@@ -1,0 +1,27 @@
+#timer {
+  background: black;
+  bottom: 24px;
+  border-radius: 4px;
+  height: 4px;
+  margin-left: 20vw;
+  position: fixed;
+  width: 60vw;
+
+  div {
+    animation: timer $ingametimer 1 forwards linear;
+    animation-play-state: paused;
+    background: red;
+    height: 100%;
+    width: 100%;
+
+    #start:checked ~ & {
+      animation-play-state: running;
+    }
+  }
+}
+
+@keyframes timer {
+  to {
+    width: 0%;
+  }
+}
