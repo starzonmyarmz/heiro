@@ -9,8 +9,8 @@ body {
   background: url('img/gate_bottom.png') 50% 50% no-repeat;
   background-size: cover;
   font-family: 'Stardom';
-  margin: 0;
   height: 100vh;
+  margin: 0;
 }
 
 input {
@@ -54,9 +54,9 @@ label {
     content: attr(data-char);
     display: block;
     opacity: 0;
-    visibility: hidden;
     transform: scaleY(-1) translateY(-1rem);
     transition: all 0.5s;
+    visibility: hidden;
   }
 }
 
@@ -118,27 +118,27 @@ section {
 @keyframes enter {
   from {
     opacity: 0;
-    visibility: hidden;
     transform: translateX($pX);
+    visibility: hidden;
   }
 
   to {
     opacity: 1;
-    visibility: visible;
     transform: translateX(0);
+    visibility: visible;
   }
 }
 
 @keyframes exit {
   from {
     opacity: 1;
-    visibility: visible;
     transform: translateX(0);
+    visibility: visible;
   }
 
   to {
     opacity: 0;
-    visibility: hidden;
     transform: translateX(-$pX);
+    visibility: hidden;
   }
 }
