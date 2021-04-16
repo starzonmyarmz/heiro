@@ -6,7 +6,7 @@ layout: base.njk
 <input type="checkbox" id="start">
 <label for="start">
   <div>
-    <h1>Glyph Mirror</h1>
+    <h1><b>G</b>L<span>Y</span>PH <b><i>E</i></b>SCAPE</h1>
     <p>Click anywhere to begin</p>
   </div>
 </label>
@@ -19,6 +19,7 @@ layout: base.njk
     {% for glyph in puzzle.patterns %}
       <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" type="checkbox">
       <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph="{{ glyph[1] }}">{{ glyph[0] }}</label>
+      <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[0] }}</em></div>
     {% endfor %}
 
     <h2 class="p{{ p }} g{{ loop.index }}">Level {{ loop.index }}</h2>

@@ -13,7 +13,7 @@
   .fill {
     animation: timer $ingametimer $startdelay 1 forwards linear;
     animation-play-state: paused;
-    background: #cc4327;
+    background: $red;
     clip-path: polygon(7px 6px, 42px 6px, 45px 5px, 130px 2px, 220px 2px, 240px 4px, 310px 3px, 393px 1px, 393px 22px, 318px 22px, 250px 22px, 201px 22px, 140px 21px, 96px 22px, 16px 25px, 7px 26px);
     height: 100%;
     width: 100%;

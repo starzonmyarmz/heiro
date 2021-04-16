@@ -2,7 +2,7 @@
 
 #start:checked {
   & + label {
-    animation: exit 1s 0.25s both;
+    animation: woosh 0.25s 0.25s forwards;
   }
 
   & ~ section .p1 {

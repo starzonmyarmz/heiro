@@ -6,35 +6,50 @@ h2 {
   font-size: 96px;
   transition: all 0.5s;
 
-  &::after {
-    background: #fff;
-    border: 1px solid;
-    box-shadow: 0 -3px 6px rgba(#000, 0.2);
-    content: attr(data-glyph);
-    display: block;
+  & + div {
     opacity: 0;
-    transform: scaleY(-1) translateY(-1rem);
-    transition: all 0.5s;
+    perspective: 100px;
+    perspective-origin: 50% 25%;
+    transform: scaleY(-1) translateY(-0.25rem);
+    transition: all 0.25s;
     visibility: hidden;
+    em {
+      background: #fff;
+      border: 2px solid;
+      border-radius: 2px;
+      box-shadow: 0 -0.25rem 0.5rem rgba(#000, 0.2);
+      content: attr(data-glyph);
+      display: block;
+      font-size: 48px;
+      transform: rotateX(-20deg);
+    }
   }
 }
 
-label:hover::after {
+label:hover + div {
   opacity: 1;
+  perspective: 225px;
   transform: scaleY(-1) translateY(0);
   visibility: visible;
+  em {
+    box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
+  }
 }
 
 section {
   :checked + label {
-    color: red;
+    color: $red;
   }
 
-  :checked + label::after {
-    color: red;
+  :checked + label + div {
     opacity: 1;
+    perspective: 225px;
     transform: scaleY(-1) translateY(0);
     visibility: visible;
+    em {
+      box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
+      color: $red;
+    }
   }
 }
 
@@ -67,6 +82,20 @@ section {
       animation: exit 1s 1 + $out * .1s 1 both;
       pointer-events: none;
     }
+
+    @if $out > 1 {
+      #p#{$puzzle}g1:checked ~ .p#{$puzzle}.r#{$out} {
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+      }
+    }
+  }
+
+  // Only the matching mirror
+  #p#{$puzzle}g1:checked ~ .p#{$puzzle}.r1 {
+    animation: exitMirror 1s 1 + 1 * .1s 1 both;
+    pointer-events: none;
   }
 }
 
@@ -94,6 +123,20 @@ section {
   to {
     opacity: 0;
     transform: translateX(-$pX);
+    visibility: hidden;
+  }
+}
+
+@keyframes exitMirror {
+  from {
+    opacity: 1;
+    transform: translateX(0) scaleY(-1) translateY(0);
+    visibility: visible;
+  }
+
+  to {
+    opacity: 0;
+    transform: translateX(-$pX) scaleY(-1) translateY(0);
     visibility: hidden;
   }
 }

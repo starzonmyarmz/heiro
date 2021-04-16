@@ -8,4 +8,48 @@
   text-align: center;
   top: 0;
   z-index: 300;
+
+  h1 {
+    animation: h1 5s infinite both;
+    color: $brown;
+    font-family: 'Kalam';
+    font-size: 128px;
+    letter-spacing: -.07em;
+    margin: 0.5rem 0;
+    text-shadow: 0 1rem 0.75rem rgba(#000, 0.2);
+    transform: skewX(-7deg) rotate(-7deg);
+
+    b {
+      display: inline-block;
+      font-size: 172px;
+      font-weight: normal;
+      position: relative;
+      top: 0.07em;
+    }
+
+    i {
+      font-style: normal;
+      margin-left: 0.15em;
+    }
+
+    span {
+      display: inline-block;
+      margin: 0 0.06em 0 -0.1em;
+    }
+  }
+}
+
+@keyframes h1 {
+  50% {
+    text-shadow: 0 2rem 1rem rgba(#000, 0.1);
+    transform: skewX(-7deg) rotate(-7deg) translateY(-0.25rem) scale(1.01);
+  }
+}
+
+@keyframes woosh {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+  }
 }
