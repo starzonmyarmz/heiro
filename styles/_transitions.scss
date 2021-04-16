@@ -1,19 +1,32 @@
 // Letsago!
 
-#start:checked
-  + label {
+#start:checked {
+  & + label {
     animation: exit 1s 0.25s both;
+  }
 
-  ~ section .p1 {
+  & ~ section .p1 {
     display: block;
   }
 
-  ~ #timer {
+  & ~ section #timer {
     opacity: 1;
     visibility: visible;
   }
 
-  ~ #timer .fill {
+  & ~ section #timer .fill,
+  & ~ section #lose {
     animation-play-state: running;
+  }
+}
+
+
+
+// Win :)
+
+#p4g1:checked {
+  & ~ #timer .fill,
+  & ~ #lose {
+    animation-play-state: paused !important;
   }
 }

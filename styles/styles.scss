@@ -1,10 +1,11 @@
-$ingametimer: 10s;
+$ingametimer: 20s;
 $startdelay: 3s;
 
 $pX: 1rem;
 
 @import "./fonts.scss";
 @import "./base.scss";
+@import "./lose.scss";
 @import "./puzzles.scss";
 @import "./timer.scss";
 @import "./title.scss";
