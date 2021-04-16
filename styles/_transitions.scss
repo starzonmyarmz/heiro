@@ -29,4 +29,8 @@
   & ~ #lose {
     animation-play-state: paused !important;
   }
+
+  & ~ #win {
+    animation-play-state: running !important;
+  }
 }

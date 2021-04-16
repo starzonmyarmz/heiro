@@ -1,0 +1,25 @@
+#win {
+  animation: win 2s 3s both;
+  animation-play-state: paused;
+  bottom: 0;
+  display: grid;
+  left: 0;
+  place-items: center;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+  visibility: hidden;
+  z-index: 300;
+}
+
+@keyframes win {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
