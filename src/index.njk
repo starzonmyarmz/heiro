@@ -2,6 +2,20 @@
 layout: base.njk
 ---
 
-{# {% include "partials/title.njk" %} #}
+<!-- Title -->
+<input type="checkbox" id="start">
+<label for="start">
+  <div>
+    <h1>Glyph Mirror</h1>
+    <p>Click anywhere to begin</p>
+  </div>
+</label>
+
+<!-- Puzzles -->
 {% include "partials/puzzle.njk" %}
-{% include "partials/timer.njk" %}
+
+<!-- Timer -->
+<div id="timer">
+  <div class="fill"></div>
+  <img src="img/timer.png" width="400" height="33">
+</div>
