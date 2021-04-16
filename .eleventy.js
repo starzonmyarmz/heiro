@@ -1,4 +1,5 @@
 const pluginSass = require('eleventy-plugin-sass')
+const htmlmin = require("html-minifier")
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img');
@@ -8,6 +9,20 @@ module.exports = function(eleventyConfig) {
     watch: 'styles/*.scss',
     outputDir: 'dist',
     sourcemaps: true
+  })
+
+  eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
+    if (outputPath.endsWith(".html")) {
+      let minified = htmlmin.minify(content, {
+        collapseInlineTagWhitespace: true,
+        collapseWhitespace: true,
+        minifyCSS: true,
+        removeComments: true,
+        useShortDoctype: true
+      })
+      return minified
+    }
+    return content
   })
 
   return {

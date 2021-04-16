@@ -9,6 +9,7 @@
   "author": "Daniel Marino <starzonmyarmz@gmail.com>",
   "dependencies": {
     "@11ty/eleventy": "^0.12.1",
-    "eleventy-plugin-sass": "^1.2.0"
+    "eleventy-plugin-sass": "^1.2.0",
+    "html-minifier": "^4.0.0"
   }
 }
