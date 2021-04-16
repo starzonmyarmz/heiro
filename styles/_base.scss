@@ -66,15 +66,17 @@ label:hover::after {
   visibility: visible;
 }
 
-:checked + label {
-  color: red;
-}
+section {
+  :checked + label {
+    color: red;
+  }
 
-:checked + label::after {
-  color: red;
-  opacity: 1;
-  transform: scaleY(-1) translateY(0);
-  visibility: visible;
+  :checked + label::after {
+    color: red;
+    opacity: 1;
+    transform: scaleY(-1) translateY(0);
+    visibility: visible;
+  }
 }
 
 
@@ -139,8 +141,4 @@ label:hover::after {
     visibility: hidden;
     transform: translateX(-$pX);
   }
-}
-
-.p1 {
-  display: block;
 }

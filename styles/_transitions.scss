@@ -1,0 +1,19 @@
+// Letsago!
+
+#start:checked
+  + label {
+    animation: exit 1s 0.25s both;
+
+  ~ section .p1 {
+    display: block;
+  }
+
+  ~ #timer {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  ~ #timer .fill {
+    animation-play-state: running;
+  }
+}

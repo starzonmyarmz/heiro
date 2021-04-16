@@ -1,4 +1,5 @@
 $ingametimer: 10s;
+$startdelay: 3s;
 
 $pX: 1rem;
 
@@ -7,3 +8,4 @@ $pX: 1rem;
 @import "./puzzles.scss";
 @import "./timer.scss";
 @import "./title.scss";
+@import "./transitions.scss";
