@@ -1,0 +1,12 @@
+<section>
+  {% for puzzle in puzzles %}
+    {% set p = loop.index %}
+
+    {% for glyph in puzzle.patterns %}
+      <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" type="checkbox">
+      <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-char="{{ glyph[1] }}">{{ glyph[0] }}</label>
+    {% endfor %}
+
+    <h2 class="p{{ p }} g{{ loop.index }}">Level {{ loop.index }}</h2>
+  {% endfor %}
+</section>

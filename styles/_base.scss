@@ -1,10 +1,146 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  user-select: none;
+}
+
 body {
+  background: url('img/gate_bottom.png') 50% 50% no-repeat;
+  background-size: cover;
+  font-family: 'Stardom';
   margin: 0;
+  height: 100vh;
 }
 
 input {
   clip-path: polygon(0 0);
   opacity: 0;
-  position: absolute;
   pointer-events: none;
+  position: absolute;
+}
+
+section {
+  bottom: 0;
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    ". . . . . . . . . . ."
+    ". header header header header header header header header header ."
+    ". glyph1 glyph2 glyph3 glyph4 glyph5 glyph6 glyph7 glyph8 glyph9 ."
+    ". reflect1 reflect2 reflect3 reflect4 reflect5 reflect6 reflect7 reflect8 reflect9 ."
+    ". . . . . . . . . . .";
+  grid-template-columns: 1fr repeat(9, 90px) 1fr;
+  grid-template-rows: 1fr auto repeat(2, 100px) 1fr;
+  left: 0;
+  position: fixed;
+  right: 0;
+  text-align: center;
+  top: 0;
+}
+
+h2 {
+  grid-area: header;
+}
+
+label {
+  font-size: 5rem;
+  transition: all 0.5s;
+
+  &::after {
+    background: #fff;
+    border: 1px solid;
+    box-shadow: 0 -3px 6px rgba(#000, 0.2);
+    content: attr(data-char);
+    display: block;
+    opacity: 0;
+    visibility: hidden;
+    transform: scaleY(-1) translateY(-1rem);
+    transition: all 0.5s;
+  }
+}
+
+label:hover::after {
+  opacity: 1;
+  transform: scaleY(-1) translateY(0);
+  visibility: visible;
+}
+
+:checked + label {
+  color: red;
+}
+
+:checked + label::after {
+  color: red;
+  opacity: 1;
+  transform: scaleY(-1) translateY(0);
+  visibility: visible;
+}
+
+
+
+@for $puzzle from 1 through 10 {
+  .p#{$puzzle} {
+    display: none;
+  }
+}
+
+@for $in from 1 through 10 {
+  .g#{$in} {
+    animation: enter 1s 2.5 + $in * .1s 1 both;
+  }
+}
+
+@for $puzzle from 1 through 10 {
+  #p#{$puzzle}g1:checked {
+    animation: exit 1s 1s both;
+    pointer-events: none;
+
+    ~ .p#{$puzzle + 1} {
+      display: block;
+    }
+  }
+}
+
+@for $puzzle from 1 through 10 {
+  @for $out from 1 through 10 {
+    #p#{$puzzle}g1:checked ~ .p#{$puzzle}.g#{$out} {
+      animation: exit 1s 1 + $out * .1s 1 both;
+      pointer-events: none;
+    }
+  }
+}
+
+
+
+@keyframes enter {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX($pX);
+  }
+
+  to {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+}
+
+@keyframes exit {
+  from {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-$pX);
+  }
+}
+
+.p1 {
+  display: block;
 }

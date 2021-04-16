@@ -1,6 +1,9 @@
-const pluginSass = require("eleventy-plugin-sass")
+const pluginSass = require('eleventy-plugin-sass')
 
 module.exports = function(eleventyConfig) {
+  eleventyConfig.addPassthroughCopy('src/img');
+  eleventyConfig.addPassthroughCopy('src/fonts');
+
   eleventyConfig.addPlugin(pluginSass, {
     watch: 'styles/*.scss',
     outputDir: 'dist',
@@ -9,8 +12,8 @@ module.exports = function(eleventyConfig) {
 
   return {
     dir: {
-      input: "src",
-      output: "dist"
+      input: 'src',
+      output: 'dist'
     }
   }
 }

@@ -1,5 +1,4 @@
 [for="start"] {
-  background: #fff;
   bottom: 0;
   display: grid;
   left: 0;
@@ -8,17 +7,9 @@
   right: 0;
   text-align: center;
   top: 0;
-  z-index: 5;
+  z-index: 300;
 
   :checked + & {
-    animation: frameout 0.5s 1 forwards;
-  }
-}
-
-@keyframes frameout {
-  to {
-    opacity: 0;
-    transform: scale(2);
-    visibility: hidden;
+    display: none;
   }
 }
