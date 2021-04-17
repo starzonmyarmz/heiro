@@ -19,7 +19,7 @@ layout: base.njk
     {% set p = loop.index %}
 
     {% for glyph in puzzle.patterns %}
-      <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" type="checkbox">
+      <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" name="p{{ p }}" type="radio">
       <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph="{{ glyph[1] }}">{{ glyph[0] }}</label>
       <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[0] }}</em></div>
     {% endfor %}

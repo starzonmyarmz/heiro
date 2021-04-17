@@ -38,6 +38,7 @@ label:hover + div {
   perspective: 225px;
   transform: scaleY(-1) translateY(0);
   visibility: visible;
+  z-index: 500;
   em {
     box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
   }
@@ -54,6 +55,7 @@ section {
     perspective: 225px;
     transform: scaleY(-1) translateY(0);
     visibility: visible;
+    z-index: 400;
     em {
       box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
     }
