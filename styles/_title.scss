@@ -16,7 +16,7 @@
     font-size: 72px;
     letter-spacing: -.07em;
     margin: 0.5rem 0;
-    text-shadow: 0 4px 0 $brown, 0 1rem 0.75rem rgba(#000, 0.2);
+    text-shadow: 0 4px 0 darken($red, 15%), 0 1rem 0.75rem rgba(#000, 0.2);
     transform: skewX(-7deg) rotate(-7deg);
 
     b {
@@ -40,6 +40,7 @@
 
   footer {
     bottom: 1rem;
+    font-size: 0.9rem;
     left: 50%;
     margin-left: -200px;
     opacity: 0.5;
@@ -50,7 +51,7 @@
 
 @keyframes h1 {
   50% {
-    text-shadow: 0 4px 0 $brown, 0 2rem 1rem rgba(#000, 0.1);
+    text-shadow: 0 4px 0 darken($red, 15%), 0 2rem 1rem rgba(#000, 0.1);
     transform: skewX(-7deg) rotate(-7deg) translateY(-0.25rem) scale(1.01);
   }
 }

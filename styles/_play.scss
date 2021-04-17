@@ -2,7 +2,7 @@ h3 {
   font-size: 1rem;
   font-weight: normal;
   grid-area: header;
-  margin: 1rem 0 0;
+  margin: 1rem 0 2rem;
 }
 
 [data-glyph] {
@@ -21,7 +21,7 @@ h3 {
       background: #fff;
       border: 2px solid;
       border-radius: 2px;
-      box-shadow: 0 -0.25rem 0.5rem rgba(#000, 0.2);
+      box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
       content: attr(data-glyph);
       display: block;
       font-size: 124px;
@@ -39,9 +39,6 @@ label:hover + div {
   transform: scaleY(-1) translateY(0);
   visibility: visible;
   z-index: 500;
-  em {
-    box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
-  }
 }
 
 section {
