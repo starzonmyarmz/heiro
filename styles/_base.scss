@@ -6,7 +6,7 @@
 }
 
 body {
-  background: url('img/gate_bottom.png') 50% 50% no-repeat;
+  background: url('img/bg.png') 50% 50% no-repeat;
   background-size: cover;
   color: $brown;
   font-family: 'Stardom';
@@ -24,18 +24,39 @@ input {
 section {
   bottom: 0;
   display: grid;
-  gap: 1rem;
+  gap: 0.5rem;
   grid-template-areas:
-    ". . . . . . . . . . ."
-    ". header header header header header header header header header ."
-    ". glyph1 glyph2 glyph3 glyph4 glyph5 glyph6 glyph7 glyph8 glyph9 ."
-    ". reflect1 reflect2 reflect3 reflect4 reflect5 reflect6 reflect7 reflect8 reflect9 ."
-    ". . . . . . . . . . .";
-  grid-template-columns: 1fr repeat(9, 90px) 1fr;
-  grid-template-rows: 1fr auto repeat(2, 100px) 1fr;
+    ". header header header header header header header ."
+    ". . . . . . . . ."
+    ". glyph1 glyph2 glyph3 glyph4 glyph5 glyph6 glyph7 ."
+    ". reflect1 reflect2 reflect3 reflect4 reflect5 reflect6 reflect7 ."
+    ". . . . . . . . ."
+    ". . . . . . . . .";
+  grid-template-columns: 1fr repeat(7, 140px) 1fr;
+  grid-template-rows: auto 1fr repeat(2, 140px) 1fr 1fr;
   left: 0;
   position: fixed;
   right: 0;
   text-align: center;
   top: 0;
+}
+
+hr {
+  animation: bg 7s infinite both;
+  background: radial-gradient(transparent, rgba(#000, 0.2));
+  border: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  position: fixed;
+  pointer-events: none;
+  right: 0;
+  top: 0;
+  z-index: 2000;
+}
+
+@keyframes bg {
+  50% {
+    opacity: 0;
+  }
 }

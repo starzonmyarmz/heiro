@@ -1,5 +1,7 @@
 #win {
-  animation: win 2s 3s both;
+  background: url('img/bg.png') 50% 50% no-repeat;
+  background-size: cover;
+  animation: win 0.5s 2s both;
   animation-play-state: paused;
   bottom: 0;
   display: grid;
@@ -10,16 +12,18 @@
   text-align: center;
   top: 0;
   visibility: hidden;
-  z-index: 300;
+  z-index: 1000;
 }
 
 @keyframes win {
   from {
     opacity: 0;
     visibility: hidden;
+    transform: scale(1.1);
   }
   to {
     opacity: 1;
     visibility: visible;
+    transform: scale(1);
   }
 }

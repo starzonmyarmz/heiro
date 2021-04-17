@@ -7,7 +7,9 @@ layout: base.njk
 <label for="start">
   <div>
     <h1><b>G</b>L<span>Y</span>PH <b><i>E</i></b>SCAPE</h1>
-    <p>Click anywhere to begin</p>
+    <p>Choose the mismatched mirrored glyph to proceed to the next puzzle.<br>Complete 10 puzzles in 60 seconds to win.</p>
+    <p><strong>Click anywhere to begin!</strong></p>
+    <footer>Gamedev.js Jam 2021 | Daniel Marino</footer>
   </div>
 </label>
 
@@ -22,7 +24,7 @@ layout: base.njk
       <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[0] }}</em></div>
     {% endfor %}
 
-    <h2 class="p{{ p }} g{{ loop.index }}">Level {{ loop.index }}</h2>
+    <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }}</h3>
   {% endfor %}
 
   <!-- Timer -->
@@ -47,3 +49,5 @@ layout: base.njk
     </div>
   </div>
 </section>
+
+<hr>

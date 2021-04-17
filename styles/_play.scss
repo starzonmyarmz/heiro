@@ -1,17 +1,21 @@
-h2 {
+h3 {
+  font-size: 1rem;
+  font-weight: normal;
   grid-area: header;
+  margin: 1rem 0 0;
 }
 
 [data-glyph] {
-  font-size: 96px;
-  transition: all 0.5s;
+  font-size: 124px;
+  line-height: 1.45;
+  transition: all 0.25s;
 
   & + div {
     opacity: 0;
     perspective: 100px;
     perspective-origin: 50% 25%;
     transform: scaleY(-1) translateY(-0.25rem);
-    transition: all 0.25s;
+    transition: all 0.25s 0.25s;
     visibility: hidden;
     em {
       background: #fff;
@@ -20,7 +24,10 @@ h2 {
       box-shadow: 0 -0.25rem 0.5rem rgba(#000, 0.2);
       content: attr(data-glyph);
       display: block;
-      font-size: 48px;
+      font-size: 124px;
+      font-style: normal;
+      line-height: 1;
+      padding-top: 35px;
       transform: rotateX(-20deg);
     }
   }
@@ -39,6 +46,7 @@ label:hover + div {
 section {
   :checked + label {
     color: $red;
+    text-shadow: 0 0 1rem rgba($red, 0.3);
   }
 
   :checked + label + div {
@@ -48,7 +56,6 @@ section {
     visibility: visible;
     em {
       box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
-      color: $red;
     }
   }
 }
@@ -61,13 +68,13 @@ section {
 
 @for $in from 1 through 10 {
   .g#{$in} {
-    animation: enter 1s 2.5 + $in * .1s 1 both;
+    animation: enter 0.5s 2s 1 both;
   }
 }
 
 @for $puzzle from 1 through 10 {
   #p#{$puzzle}g1:checked {
-    animation: exit 1s 1s both;
+    animation: exit 0.5s 0.5s 1 both;
     pointer-events: none;
 
     ~ .p#{$puzzle + 1} {
@@ -79,7 +86,7 @@ section {
 @for $puzzle from 1 through 10 {
   @for $out from 1 through 10 {
     #p#{$puzzle}g1:checked ~ .p#{$puzzle}.g#{$out} {
-      animation: exit 1s 1 + $out * .1s 1 both;
+      animation: exit 0.5s 0.5s 1 both;
       pointer-events: none;
     }
 
@@ -94,7 +101,7 @@ section {
 
   // Only the matching mirror
   #p#{$puzzle}g1:checked ~ .p#{$puzzle}.r1 {
-    animation: exitMirror 1s 1 + 1 * .1s 1 both;
+    animation: exitMirror 0.5s 0.5s 1 both;
     pointer-events: none;
   }
 }
