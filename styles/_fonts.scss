@@ -1,17 +1,17 @@
 @font-face {
   font-family: 'Stardom';
-  src: url('../fonts/Stardom-Regular.woff2') format('woff2'),
-       url('../fonts/Stardom-Regular.woff') format('woff'),
-       url('../fonts/Stardom-Regular.ttf') format('truetype');
-  font-weight: 400;
-  font-display: swap;
   font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('../fonts/Stardom-Regular.woff2') format('woff2'),
+       url('../fonts/Stardom-Regular.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Kalam';
-  src: url('../fonts/Kalam-Bold.ttf') format('ttf');
-  font-weight: 700;
-  font-display: swap;
   font-style: normal;
+  font-weight: 700;
+  src: local(''),
+       url('../fonts/kalam-v11-latin-700.woff2') format('woff2'),
+       url('../fonts/kalam-v11-latin-700.woff') format('woff');
 }

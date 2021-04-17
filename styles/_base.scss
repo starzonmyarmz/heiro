@@ -34,7 +34,7 @@ section {
     ". reflect1 reflect2 reflect3 reflect4 reflect5 reflect6 reflect7 ."
     ". . . . . . . . ."
     ". . . . . . . . .";
-  grid-template-columns: 1fr repeat(7, 140px) 1fr;
+  grid-template-columns: 1fr repeat(7, 130px) 1fr;
   grid-template-rows: auto 1fr repeat(2, 140px) 1fr 1fr;
   left: 0;
   position: fixed;
