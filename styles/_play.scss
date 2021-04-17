@@ -18,16 +18,17 @@ h3 {
     transition: all 0.25s 0.25s;
     visibility: hidden;
     em {
-      background: #fff;
-      border: 2px solid;
-      border-radius: 2px;
-      box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
+      background: url('img/mirror.png') 50% 50% no-repeat;
+      background-size: contain;
+      color: rgba($brown, 0.7);
       content: attr(data-glyph);
       display: block;
+      filter: drop-shadow(0 -0.5rem 1rem rgba(#000, 0.2));
       font-size: 124px;
       font-style: normal;
       line-height: 1;
-      padding-top: 35px;
+      margin-top: -5px;
+      padding-top: 40px;
       transform: rotateX(-20deg);
     }
   }
@@ -53,9 +54,6 @@ section {
     transform: scaleY(-1) translateY(0);
     visibility: visible;
     z-index: 400;
-    em {
-      box-shadow: 0 -0.5rem 1rem rgba(#000, 0.1);
-    }
   }
 }
 
