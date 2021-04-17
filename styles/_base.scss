@@ -10,8 +10,10 @@ body {
   background-size: cover;
   color: $brown;
   font-family: 'Stardom';
+  font-size: 18px;
   height: 100vh;
   margin: 0;
+  text-shadow: 0 1px 1px rgba(#fff, 0.3);
 }
 
 input {
@@ -42,8 +44,6 @@ section {
 }
 
 hr {
-  animation: bg 7s infinite both;
-  background: radial-gradient(transparent, rgba(#000, 0.2));
   border: 0;
   bottom: 0;
   left: 0;
@@ -53,10 +53,28 @@ hr {
   right: 0;
   top: 0;
   z-index: 2000;
-}
 
-@keyframes bg {
-  50% {
-    opacity: 0;
+  &:before,
+  &:after {
+    content: '𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕';
+    font-size: 2rem;
+    letter-spacing: 0.05em;
+    opacity: 0.3;
+    position: fixed;
+    text-orientation: sideways;
+    text-overflow: clip;
+    top: 50%;
+    white-space: nowrap;
+    writing-mode: vertical-rl;
+  }
+
+  &:before {
+    left: 0.5rem;
+    transform: translateY(-50%);
+  }
+
+  &:after {
+    right: 0.5rem;
+    transform: translateY(-50%) scaleX(-1);
   }
 }
