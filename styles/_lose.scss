@@ -13,6 +13,16 @@
   top: 0;
   visibility: hidden;
   z-index: 1000;
+
+  h4 {
+    background: url('img/lose.png') 50% 50% no-repeat;
+    background-size: contain;
+    color: #845c43;
+    font-size: 124px;
+    line-height: 1;
+    margin: 0;
+    padding: 0 0 50px;
+  }
 }
 
 @keyframes lose {

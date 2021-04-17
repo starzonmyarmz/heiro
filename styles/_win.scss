@@ -13,6 +13,16 @@
   top: 0;
   visibility: hidden;
   z-index: 1000;
+
+  h4 {
+    background: url('img/win.png') 50% 50% no-repeat;
+    background-size: contain;
+    color: #dc7822;
+    font-size: 124px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 30px 0;
+  }
 }
 
 @keyframes win {

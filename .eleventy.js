@@ -4,6 +4,7 @@ const htmlmin = require("html-minifier")
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img');
   eleventyConfig.addPassthroughCopy('src/fonts');
+  eleventyConfig.addPassthroughCopy('src/sound');
 
   eleventyConfig.addPlugin(pluginSass, {
     watch: 'styles/*.scss',
