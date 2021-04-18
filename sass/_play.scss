@@ -20,15 +20,14 @@ h3 {
     em {
       background: url('img/mirror.png') 50% 50% no-repeat;
       background-size: contain;
-      color: rgba($brown, 0.7);
-      content: attr(data-glyph);
+      color: $brown;
       display: block;
       filter: drop-shadow(0 -0.5rem 1rem rgba(#000, 0.2));
       font-size: 124px;
       font-style: normal;
       line-height: 1;
       margin-top: -5px;
-      padding-top: 40px;
+      padding-top: 43px;
       transform: rotateX(-20deg);
     }
   }

@@ -3,12 +3,11 @@ layout: base.njk
 ---
 
 <!-- Title -->
-<input type="checkbox" id="start">
+<input type="checkbox" id="start" autofocus>
 <label for="start">
   <div>
     <h1><b>C</b>he<span>v</span>al <b><i>G</i></b>ly<span>p</span>h</h1>
-    <p>Choose the mismatched mirrored glyph to proceed to the next puzzle.<br>Complete 10 puzzles in 60 seconds to win.</p>
-    <h2>Click anywhere to begin!</h2>
+    <h2>Press&nbsp;<strong>SPACE</strong>&nbsp;to continue</h2>
     <footer>Gamedev.js Jam 2021 | Daniel Marino | Powered by HTML/CSS</footer>
   </div>
 </label>
@@ -20,11 +19,15 @@ layout: base.njk
 
     {% for glyph in puzzle.patterns %}
       <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" name="p{{ p }}" type="radio">
-      <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph="{{ glyph[1] }}">{{ glyph[0] }}</label>
-      <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[0] }}</em></div>
+      <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph>{{ glyph[0] }}</label>
+      <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[1] }}</em></div>
     {% endfor %}
 
-    <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }}</h3>
+    {% if p == 1 %}
+      <h3 class="p{{ p }} g{{ loop.index }}">How to play</h3>
+    {% else %}
+      <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index - 1 }} / {{ puzzles.length - 5 }}</h3>
+    {% endif %}
   {% endfor %}
 
   <!-- Timer -->

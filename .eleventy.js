@@ -1,5 +1,6 @@
 const pluginSass = require('eleventy-plugin-sass')
 const htmlmin = require("html-minifier")
+const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img');
@@ -7,9 +8,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/sound');
 
   eleventyConfig.addPlugin(pluginSass, {
-    watch: 'styles/*.scss',
-    outputDir: 'dist',
-    sourcemaps: true
+    watch: 'sass/*.scss',
+    outputDir: 'src',
+    sourcemaps: false
+  })
+
+  eleventyConfig.addFilter("cssmin", function(code) {
+    return new CleanCSS({}).minify(code).styles
   })
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
