@@ -6,8 +6,11 @@
 }
 
 body {
-  background: url('img/bg.png') 50% 50% no-repeat;
-  background-size: cover;
+  background:
+    url('img/left_column.png') -32px 50% no-repeat,
+    url('img/right_column.png') calc(100% + 37px) 50% no-repeat,
+    url('img/bg.png') 50% 50% no-repeat;
+  background-size: 12%, 12%, cover;
   color: $brown;
   font-family: 'Nunito';
   font-size: 18px;
@@ -81,10 +84,10 @@ hr {
 
   &:before,
   &:after {
+    color: lighten($red, 10%);
     content: '𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕 𓉕';
     font-size: 2rem;
     letter-spacing: 0.05em;
-    opacity: 0.3;
     position: fixed;
     text-orientation: sideways;
     text-overflow: clip;
@@ -95,11 +98,11 @@ hr {
 
   &:before {
     left: 0.5rem;
-    transform: translateY(-50%);
+    transform: translateY(-50%) perspective(600px) rotateX(10deg);
   }
 
   &:after {
     right: 0.5rem;
-    transform: translateY(-50%) scaleX(-1);
+    transform: translateY(-50%) scaleX(-1) perspective(600px) rotateX(10deg);
   }
 }

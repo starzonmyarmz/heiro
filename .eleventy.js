@@ -1,6 +1,5 @@
 const pluginSass = require('eleventy-plugin-sass')
 const htmlmin = require("html-minifier")
-const CleanCSS = require("clean-css");
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy('src/img');
@@ -9,12 +8,8 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginSass, {
     watch: 'sass/*.scss',
-    outputDir: 'src',
+    outputDir: 'dist',
     sourcemaps: false
-  })
-
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles
   })
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {
