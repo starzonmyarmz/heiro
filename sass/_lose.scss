@@ -34,6 +34,10 @@
     position: absolute;
     width: 500px;
   }
+
+  &:hover embed {
+    display: revert;
+  }
 }
 
 @keyframes lose {
