@@ -1,26 +1,26 @@
 name: Eleventy Build
 
 on:
-  push:
-    branches:
-      - master
+push:
+  branches:
+    - master
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
-    steps:
-      - uses: actions/checkout@v2
+deploy:
+  runs-on: ubuntu-18.04
+  steps:
+    - uses: actions/checkout@v2
 
-      - name: Setup Node
-        uses: actions/setup-node@v1
-        with:
-          node-version: '10.x'
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
 
-      - run: yarn install --frozen-lockfile
-      - run: yarn b
+    - run: yarn install --frozen-lockfile
+    - run: yarn b
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./dist
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        publish_dir: ./dist
