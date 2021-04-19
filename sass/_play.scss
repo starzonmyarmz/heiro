@@ -73,6 +73,10 @@ section {
     animation: exit 0.5s 0.5s 1 both;
     pointer-events: none;
 
+    ~ embed[class="s#{$puzzle}"] {
+      display: revert;
+    }
+
     ~ .p#{$puzzle + 1} {
       display: block;
     }

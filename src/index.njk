@@ -29,6 +29,8 @@ layout: base.njk
     {% else %}
       <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index - 1 }} / {{ puzzles.length - 1 }}</h3>
     {% endif %}
+
+    <embed class="s{{ p }}" type="audio/mp3" src="sound/ding.mp3" width="0" height="0">
   {% endfor %}
 
   <!-- Timer -->

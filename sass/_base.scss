@@ -15,6 +15,10 @@ body {
   text-shadow: 0 1px 1px rgba(#fff, 0.3);
 }
 
+embed {
+  display: none;
+}
+
 input {
   clip-path: polygon(0 0);
   opacity: 0;
