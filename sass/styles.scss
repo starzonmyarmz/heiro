@@ -1,10 +1,18 @@
-$ingametimer: 60s;
+$ingametimer: 200s;
 $startdelay: 3s;
 
 $red: #cc4327;
 $brown: #4b2512;
 
 $pX: 1rem;
+
+%bg {
+  background:
+    url('img/left_column.png') -32px 50% no-repeat,
+    url('img/right_column.png') calc(100% + 37px) 50% no-repeat,
+    url('img/bg.png') 50% 50% no-repeat;
+  background-size: 12%, 12%, cover;
+}
 
 @import "./fonts.scss";
 @import "./base.scss";

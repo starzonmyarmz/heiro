@@ -6,7 +6,8 @@ layout: base.njk
 <input type="checkbox" id="start" autofocus>
 <label for="start">
   <div>
-    <h1><b>C</b>he<span>v</span>al <b><i>G</i></b>ly<span>p</span>h</h1>
+    {# <h1><b>C</b>he<span>v</span>al <b><i>G</i></b>ly<span>p</span>h</h1> #}
+    <h1>Mirror</h1>
     <h2>Press&nbsp;<strong>SPACE</strong>&nbsp;to continue</h2>
     <footer>Gamedev.js Jam 2021 | Daniel Marino | Powered by HTML/CSS</footer>
   </div>
@@ -26,7 +27,7 @@ layout: base.njk
     {% if p == 1 %}
       <h3 class="p{{ p }} g{{ loop.index }}">How to play</h3>
     {% else %}
-      <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index - 1 }} / {{ puzzles.length - 5 }}</h3>
+      <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index - 1 }} / {{ puzzles.length - 1 }}</h3>
     {% endif %}
   {% endfor %}
 
@@ -41,8 +42,9 @@ layout: base.njk
     <hr>
     <div>
       <h4>𓀠</h4>
-      <h1><b>Y</b>ou <b><i>W</i></b>in!</h1>
-      <p>Refresh the browser to play again</p>
+      <footer>
+        <strong>Refresh</strong>&nbsp;the browser to play again
+      </footer>
     </div>
   </div>
 
@@ -51,8 +53,9 @@ layout: base.njk
     <hr>
     <div>
       <h4>𓀿</h4>
-      <h1><b>Y</b>ou <b><i>L</i></b>ose</h1>
-      <p>Refresh the browser to play again</p>
+      <footer>
+        <strong>Refresh</strong>&nbsp;the browser to try again
+      </footer>
     </div>
   </div>
 </section>

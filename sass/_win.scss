@@ -1,6 +1,5 @@
 #win {
-  background: url('img/bg.png') 50% 50% no-repeat;
-  background-size: cover;
+  @extend %bg;
   animation: win 0.5s 2s both;
   animation-play-state: paused;
   bottom: 0;
@@ -15,14 +14,25 @@
   z-index: 1000;
 
   h4 {
+    animation: blast 0.5s 3s both;
+    animation-play-state: paused;
     background: url('img/win.png') 50% 50% no-repeat;
     background-size: contain;
     color: #dc7822;
-    font-size: 124px;
+    font-size: 170px;
     font-weight: 300;
     line-height: 1.5;
     margin: 0;
-    padding: 30px 0;
+    padding: 20px 50px 0;
+  }
+
+  footer {
+    bottom: 1rem;
+    left: 50%;
+    margin-left: -250px;
+    opacity: 0.7;
+    position: absolute;
+    width: 500px;
   }
 }
 
@@ -30,11 +40,25 @@
   from {
     opacity: 0;
     visibility: hidden;
-    transform: scale(1.1);
   }
   to {
     opacity: 1;
     visibility: visible;
+  }
+}
+
+@keyframes blast {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+    visibility: hidden;
+  }
+  80% {
+    transform: scale(1.05);
+    visibility: visible;
+  }
+  100% {
+    opacity: 1;
     transform: scale(1);
   }
 }
