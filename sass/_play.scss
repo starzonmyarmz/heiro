@@ -4,7 +4,7 @@ h3 {
 }
 
 [data-glyph] {
-  color: lighten($brown, 5%);
+  color: lighten($brown, 10%);
   cursor: pointer;
   font-size: 124px;
   line-height: 1.45;
@@ -27,7 +27,8 @@ h3 {
       font-style: normal;
       line-height: 1;
       margin-top: -5px;
-      padding-top: 43px;
+      opacity: 0.85;
+      padding-top: 58px;
       transform: rotateX(-20deg);
     }
   }
