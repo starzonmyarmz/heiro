@@ -1,4 +1,4 @@
-$ingametimer: 60s;
+$ingametimer: 600s;
 $startdelay: 3s;
 
 $red: #cc4327;
@@ -24,6 +24,14 @@ $pX: 1rem;
   top: 0;
 }
 
+%mirrorskew {
+  opacity: 0;
+  perspective: 100px;
+  perspective-origin: 50% 25%;
+  transform: scaleY(-1) translateY(-0.25rem);
+  transition: all 0.25s 0.25s;
+  visibility: hidden;
+}
 
 @import "./fonts.scss";
 @import "./base.scss";

@@ -13,6 +13,7 @@
     font-family: 'Kalam';
     font-size: 72px;
     letter-spacing: -.05em;
+    line-height: 1;
     margin: 0;
     text-shadow: 0 4px 0 darken($red, 15%), 0 1rem 0.75rem rgba(#000, 0.2);
     text-transform: uppercase;
@@ -32,12 +33,7 @@
     }
 
     div:last-child {
-      opacity: 0;
-      perspective: 100px;
-      perspective-origin: 50% 25%;
-      transform: scaleY(-1) translateY(-0.25rem);
-      transition: all 0.25s 0.25s;
-      visibility: hidden;
+      @extend %mirrorskew;
       em {
         background: url('img/mirrortitle.webp') 50% 50% no-repeat;
         background-size: contain;
