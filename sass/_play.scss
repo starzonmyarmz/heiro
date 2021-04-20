@@ -6,6 +6,8 @@ h3 {
 }
 
 [data-glyph] {
+  color: lighten($brown, 5%);
+  cursor: pointer;
   font-size: 124px;
   line-height: 1.45;
   transition: all 0.25s;

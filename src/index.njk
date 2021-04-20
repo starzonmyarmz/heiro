@@ -6,14 +6,18 @@ layout: base.njk
 <input type="checkbox" id="start" autofocus>
 <label for="start">
   <div>
-    {# <h1><b>C</b>he<span>v</span>al <b><i>G</i></b>ly<span>p</span>h</h1> #}
-    <h1>Mirror</h1>
-    <h2>Press&nbsp;<strong>SPACE</strong>&nbsp;to continue</h2>
+    <h1>
+      <div><b>M</b>ismatched</div>
+      <div><em><b>H</b>ierogl<i>y</i>ph</em></div>
+    </h1>
+
     <footer>Gamedev.js Jam 2021 | Daniel Marino | Powered by HTML/CSS</footer>
   </div>
 </label>
 
 <section>
+  <embed src="sound/loop.mp3" width="0" height="0">
+
   <!-- Puzzles -->
   {% for puzzle in puzzles %}
     {% set p = loop.index %}
@@ -24,13 +28,8 @@ layout: base.njk
       <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[1] }}</em></div>
     {% endfor %}
 
-    {% if p == 1 %}
-      <h3 class="p{{ p }} g{{ loop.index }}">How to play</h3>
-    {% else %}
-      <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index - 1 }} / {{ puzzles.length - 1 }}</h3>
-    {% endif %}
-
-    <embed class="s{{ p }}" type="audio/mp3" src="sound/ding.mp3" width="0" height="0">
+    <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }} — Select the mismatched Hieroglyph</h3>
+    <embed class="s{{ p }}" src="sound/ding.mp3" width="0" height="0">
   {% endfor %}
 
   <!-- Timer -->
@@ -57,12 +56,8 @@ layout: base.njk
       <h4>𓀿</h4>
       <footer>
         <strong>Refresh</strong>&nbsp;the browser to try again
-        <embed type="audio/ogg" src="sound/lose.ogg" width="0" height="0">
+        <embed src="sound/lose.ogg" width="0" height="0">
       </footer>
     </div>
   </div>
 </section>
-
-<hr>
-
-<audio type="audio/ogg" src="sound/loop.ogg" autoplay loop>

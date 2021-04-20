@@ -5,6 +5,10 @@
     animation: woosh 0.25s 0.25s forwards;
   }
 
+  & ~ section > embed:first-child {
+    display: revert;
+  }
+
   & ~ section .p1 {
     display: block;
   }

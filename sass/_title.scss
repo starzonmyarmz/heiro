@@ -1,6 +1,4 @@
 [for="start"] {
-  background: url('img/mirrorshadow.png') 50% 33% no-repeat;
-  background-size: 260px;
   bottom: 0;
   display: grid;
   left: 0;
@@ -27,19 +25,60 @@
   }
 
   h1 {
-    margin: 0.8em 0 1.8em;
+    color: $red;
+    cursor: pointer;
+    font-family: 'Kalam';
+    font-size: 72px;
+    letter-spacing: -.05em;
+    margin: 0;
+    text-shadow: 0 4px 0 darken($red, 15%), 0 1rem 0.75rem rgba(#000, 0.2);
+    text-transform: uppercase;
+
+    b {
+      display: inline-block;
+      font-size: 124px;
+      font-weight: normal;
+      position: relative;
+      top: 0.07em;
+    }
+
+    i {
+      display: inline-block;
+      font-style: normal;
+      margin: 0 0.05em 0 -0.1em;
+    }
+
+    div:last-child {
+      opacity: 0;
+      perspective: 100px;
+      perspective-origin: 50% 25%;
+      transform: scaleY(-1) translateY(-0.25rem);
+      transition: all 0.25s 0.25s;
+      visibility: hidden;
+      em {
+        background: url('img/mirrortitle.png') 50% 50% no-repeat;
+        background-size: contain;
+        display: block;
+        filter: drop-shadow(0 -0.5rem 1rem rgba(#000, 0.2));
+        font-style: normal;
+        line-height: 1;
+        padding: 3.5rem 4rem 4.5rem;
+        transform: rotateX(-20deg);
+      }
+    }
+
+    &:hover div:last-child {
+      opacity: 1;
+      perspective: 225px;
+      transform: scaleY(-1) translateY(0);
+      visibility: visible;
+      z-index: 500;
+    }
   }
 
   h2 {
     font-size: 1.3rem;
     font-weight: 300;
-  }
-}
-
-@keyframes h1 {
-  50% {
-    text-shadow: 0 4px 0 darken($red, 15%), 0 2rem 1rem rgba(#000, 0.1);
-    transform: skewX(-7deg) rotate(-7deg) translateY(-0.25rem) scale(1.01);
   }
 }
 
