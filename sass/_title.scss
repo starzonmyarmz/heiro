@@ -16,12 +16,10 @@
 
   footer {
     bottom: 1rem;
-    font-size: 0.9rem;
     left: 50%;
-    margin-left: -250px;
-    opacity: 0.7;
+    margin-left: -350px;
     position: absolute;
-    width: 500px;
+    width: 700px;
   }
 
   h1 {
@@ -74,11 +72,6 @@
       visibility: visible;
       z-index: 500;
     }
-  }
-
-  h2 {
-    font-size: 1.3rem;
-    font-weight: 300;
   }
 }
 
