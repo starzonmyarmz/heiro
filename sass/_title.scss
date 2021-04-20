@@ -1,25 +1,10 @@
 [for="start"] {
-  bottom: 0;
-  display: grid;
-  left: 0;
-  place-items: center;
-  position: fixed;
-  right: 0;
-  text-align: center;
-  top: 0;
+  @extend %fixed;
   z-index: 1000;
 
   span {
     display: inline-block;
     margin: 0 0.03em 0 0.1em;
-  }
-
-  footer {
-    bottom: 1rem;
-    left: 50%;
-    margin-left: -350px;
-    position: absolute;
-    width: 700px;
   }
 
   h1 {
@@ -54,7 +39,7 @@
       transition: all 0.25s 0.25s;
       visibility: hidden;
       em {
-        background: url('img/mirrortitle.png') 50% 50% no-repeat;
+        background: url('img/mirrortitle.webp') 50% 50% no-repeat;
         background-size: contain;
         display: block;
         filter: drop-shadow(0 -0.5rem 1rem rgba(#000, 0.2));

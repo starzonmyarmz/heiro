@@ -1,22 +1,13 @@
 #win {
   @extend %bg;
-  animation: win 0.5s 2s both;
-  animation-play-state: paused;
-  bottom: 0;
-  display: grid;
-  left: 0;
-  place-items: center;
-  position: fixed;
-  right: 0;
-  text-align: center;
-  top: 0;
+  @extend %fixed;
+  animation: win 0.5s 2s both paused;
   visibility: hidden;
   z-index: 1000;
 
   h4 {
-    animation: blast 0.5s 3s both;
-    animation-play-state: paused;
-    background: url('img/win.png') 50% 50% no-repeat;
+    animation: blast 0.5s 3s both paused;
+    background: url('img/win.webp') 50% 50% no-repeat;
     background-size: contain;
     color: #dc7822;
     font-size: 170px;
@@ -24,14 +15,6 @@
     line-height: 1.5;
     margin: 0;
     padding: 20px 50px 0;
-  }
-
-  footer {
-    bottom: 1rem;
-    left: 50%;
-    margin-left: -250px;
-    position: absolute;
-    width: 500px;
   }
 }
 

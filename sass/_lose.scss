@@ -1,36 +1,19 @@
 #lose {
   @extend %bg;
-  animation: lose 0.5s $ingametimer + $startdelay + 1s both;
-  animation-play-state: paused;
-  bottom: 0;
-  display: grid;
-  left: 0;
-  place-items: center;
-  position: fixed;
-  right: 0;
-  text-align: center;
-  top: 0;
+  @extend %fixed;
+  animation: lose 0.5s $ingametimer + $startdelay + 1s both paused;
   visibility: hidden;
   z-index: 1000;
 
   h4 {
-    animation: drop 0.5s $ingametimer + $startdelay + 2s ease-in both;
-    animation-play-state: paused;
-    background: url('img/lose.png') 50% 50% no-repeat;
+    animation: drop 0.5s $ingametimer + $startdelay + 2s ease-in both paused;
+    background: url('img/lose.webp') 50% 50% no-repeat;
     background-size: contain;
     color: #845c43;
     font-size: 200px;
     line-height: 1;
     margin: 0;
     padding: 0px 50px 80px
-  }
-
-  footer {
-    bottom: 1rem;
-    left: 50%;
-    margin-left: -250px;
-    position: absolute;
-    width: 500px;
   }
 
   &:hover embed {

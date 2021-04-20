@@ -8,11 +8,22 @@ $pX: 1rem;
 
 %bg {
   background:
-    url('img/left_column.png') -32px 50% no-repeat,
-    url('img/right_column.png') calc(100% + 37px) 50% no-repeat,
-    url('img/bg.png') 50% 50% no-repeat;
+    url('img/left_column.webp') -32px 50% no-repeat,
+    url('img/right_column.webp') calc(100% + 37px) 50% no-repeat,
+    url('img/bg.webp') 50% 50% no-repeat;
   background-size: 11%, 11%, cover;
 }
+
+%fixed {
+  bottom: 0;
+  display: grid;
+  left: 0;
+  place-items: center;
+  position: fixed;
+  right: 0;
+  top: 0;
+}
+
 
 @import "./fonts.scss";
 @import "./base.scss";

@@ -8,8 +8,7 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPlugin(pluginSass, {
     watch: 'sass/*.scss',
-    outputDir: 'dist',
-    sourcemaps: false
+    outputDir: 'dist'
   })
 
   eleventyConfig.addTransform("htmlmin", (content, outputPath) => {

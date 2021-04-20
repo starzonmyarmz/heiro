@@ -18,7 +18,7 @@ h3 {
     transition: all 0.25s 0.25s;
     visibility: hidden;
     em {
-      background: url('img/mirror.png') 50% 50% no-repeat;
+      background: url('img/mirror.webp') 50% 50% no-repeat;
       background-size: contain;
       color: $brown;
       display: block;
@@ -46,14 +46,13 @@ section {
   :checked + label {
     color: $red;
     text-shadow: 0 0 1rem rgba($red, 0.3);
-  }
-
-  :checked + label + div {
-    opacity: 1;
-    perspective: 225px;
-    transform: scaleY(-1) translateY(0);
-    visibility: visible;
-    z-index: 400;
+    + div {
+      opacity: 1;
+      perspective: 225px;
+      transform: scaleY(-1) translateY(0);
+      visibility: visible;
+      z-index: 400;
+    }
   }
 }
 
