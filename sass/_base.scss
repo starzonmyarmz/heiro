@@ -6,7 +6,6 @@
 }
 
 body {
-  @extend %bg;
   color: $brown;
   font-family: 'Josefin Sans';
   height: 100vh;
@@ -35,6 +34,35 @@ input {
   position: absolute;
 }
 
+main {
+  @extend %bg;
+  animation: letsgo 0.5s 2s forwards;
+  height: 100vh;
+  opacity: 0;
+  visibility: hidden;
+  width: 100vw;
+}
+
+.loading {
+  @extend %fixed;
+  color: rgba(#fff, 0.8);
+
+  div:last-child {
+    @extend %fixed;
+    animation: grain 3s steps(5) infinite;
+    background: url('img/grainwhite.webp');
+    background-size: 500px;
+    opacity: 0.1;
+  }
+}
+
+@keyframes letsgo {
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
 section {
   @extend %fixed;
   display: grid;
@@ -56,25 +84,79 @@ small {
   margin-top: 0.5rem;
 }
 
-hr {
-  @extend %fixed;
-  animation: bg 3s steps(5) infinite;
-  background: url('img/grain.webp');
-  background-size: 500px;
-  border: 0;
-  margin: 0;
-  opacity: 0.15;
+// Grain
+
+.grain {
+  animation: grainin $ingametimer $startdelay + 1s forwards paused;
+  opacity: 0.1;
   pointer-events: none;
   z-index: 2000;
+
+  div {
+    @extend %fixed;
+    animation: grain 3s steps(5) infinite;
+    background: url('img/grain.webp');
+    background-size: 500px;
+  }
 }
 
-@keyframes bg {
+@keyframes grainin {
+  0% {
+    opacity: 0.1;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  90%, 100% {
+    background-size: 100%;
+    opacity: 0.2;
+  }
+}
+
+@keyframes grain {
   0%   { background-position: 25% 72%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   20%  { background-position: 1% 61%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   40%  { background-position: 84% 75%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   60%  { background-position: 2% 3%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   80%  { background-position: 67% 99%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   100% { background-position: 0% 0%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
+}
+
+// Pulse
+
+.pulse {
+  animation: pulsein $ingametimer $startdelay + 1s forwards paused;
+  pointer-events: none;
+  visibility: hidden;
+  z-index: 2000;
+
+  div {
+    @extend %fixed;
+    animation: pulse 2s infinite both;
+    background: radial-gradient(transparent, #000) 50% 50%;
+    background-size: 100%;
+  }
+}
+
+@keyframes pulsein {
+  0% {
+    background-size: 200%;
+    opacity: 0;
+  }
+  50% {
+    background-size: 200%;
+    opacity: 0;
+    visibility: visible;
+  }
+  90%, 100% {
+    background-size: 100%;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes pulse {
+  50% { background-size: 120%; }
 }
 
 // Card Flip

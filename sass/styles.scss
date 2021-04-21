@@ -1,4 +1,5 @@
 $ingametimer: 78s;
+// $ingametimer: 10s;
 $startdelay: 3s;
 
 $red: #cc4327;
@@ -42,3 +43,5 @@ $pX: 1rem;
 @import "./title.scss";
 @import "./transitions.scss";
 @import "./win.scss";
+
+body { display: block; }

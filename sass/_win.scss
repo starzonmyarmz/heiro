@@ -3,7 +3,7 @@
   @extend %fixed;
   animation: win 0.5s 2s both paused;
   visibility: hidden;
-  z-index: 1000;
+  z-index: 3000;
 
   .card {
     animation: blast 0.5s 3s both paused;
@@ -31,6 +31,10 @@
         margin-top: -3rem;
       }
     }
+  }
+
+  &:hover embed {
+    display: revert;
   }
 }
 

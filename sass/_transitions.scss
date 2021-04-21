@@ -5,7 +5,7 @@
     animation: woosh 0.25s 0.25s forwards;
   }
 
-  & ~ section > embed:first-child {
+  & ~ section > .music {
     display: revert;
   }
 
@@ -21,7 +21,9 @@
   & ~ section #timer .fill,
   & ~ section #lose,
   & ~ section #lose .card,
-  & ~ section em > i {
+  & ~ section em > i,
+  & ~ section .pulse,
+  & ~ .grain, {
     animation-play-state: running;
   }
 }
@@ -31,9 +33,12 @@
 // Win :)
 
 #p6g1:checked {
-  & ~ #timer .fill,
-  & ~ #lose {
+  & ~ #timer .fill {
     animation-play-state: paused !important;
+  }
+
+  & ~ #lose  {
+    display: none;
   }
 
   & ~ #win,

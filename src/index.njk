@@ -7,30 +7,32 @@ layout: base.njk
 <label for="start">
   <div>
     <h1>
-      <div><b>H</b>ierogl<i>y</i>ph</div>
-      <div><em><b>H</b>ierogl<i>y</i>ph</em></div>
+      <div><b>H</b>iero</div>
+      <div><em><b>H</b>iero</em></div>
     </h1>
-
-    <audio src="sound/vinyl.ogg" autoplay>
-    <audio src="sound/wahh.ogg" autoplay>
   </div>
 </label>
 
+<embed src="sound/wahh.ogg" width="0" height="0">
+
 <section>
-  <embed src="sound/percussion.ogg" width="0" height="0">
+  <embed class="music" src="sound/percussion.ogg" width="0" height="0">
 
   <!-- Puzzles -->
   {% for puzzle in puzzles %}
     {% set p = loop.index %}
 
     {% for glyph in puzzle.patterns %}
-      <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" name="p{{ p }}" type="radio">
+      <input class="p{{ p }} g{{ loop.index }} {% if loop.index == 1 %}w1{% endif %}" id="p{{ p }}g{{ loop.index }}" type="checkbox">
       <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph>{{ glyph[0] }}</label>
       <div class="p{{ p }} r{{ loop.index }}"><em><i>{{ glyph[1] }}</i></em></div>
+      {% if loop.index != 1 %}
+        <embed src="sound/bou.ogg" width="0" height="0">
+      {% endif %}
     {% endfor %}
 
     <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }} — Select the mismatched hieroglyph</h3>
-    <embed class="s{{ p }}" src="sound/ding.mp3" width="0" height="0">
+    <embed class="s{{ p }}" src="sound/ding.ogg" width="0" height="0">
   {% endfor %}
 
   <!-- Timer -->
@@ -56,6 +58,7 @@ layout: base.njk
 
       <footer>
         Refresh the browser to play again
+        <embed src="sound/win.ogg" width="0" height="0">
       </footer>
     </div>
   </div>
@@ -68,7 +71,7 @@ layout: base.njk
           <div class="card-front">𓀿</div>
           <div class="card-back">
             <div>
-              Death”
+              “Death”
               <small>Gamedev.js Jam 2021 <br> Daniel Marino</small>
             </div>
           </div>
@@ -81,6 +84,8 @@ layout: base.njk
       </footer>
     </div>
   </div>
+
+  <div class="pulse"><div></div></div>
 </section>
 
-<hr>
+<div class="grain"><div></div></div>

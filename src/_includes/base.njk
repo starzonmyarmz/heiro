@@ -5,15 +5,19 @@
     <title>Cheval Glyph</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-      body, embed { display: none; }
+      body { background: #333; }
+      embed { display: none; }
     </style>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    {{ content | safe }}
-
-    <style>
-      body { display: block; }
-    </style>
+    <audio src="sound/vinyl.ogg" autoplay></audio>
+    <div class="loading">
+      <div>Loading…</div>
+      <div></div>
+    </div>
+    <main>
+      {{ content | safe }}
+    </main>
   </body>
 </html>

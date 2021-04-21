@@ -7,6 +7,7 @@ h3 {
   color: lighten($brown, 10%);
   cursor: pointer;
   font-size: 124px;
+  position: relative;
   transition: all 0.25s;
 
   & + div {
@@ -25,19 +26,29 @@ h3 {
       width: 120px;
     }
     i {
-      animation: blur $ingametimer $startdelay + 1s steps(5) forwards paused;
       font-style: normal;
     }
   }
+
+  &:after {
+    animation: rotate 0.5s steps(5) infinite;
+    background: url('img/textgrain.webp') 50% 50%;
+    bottom: 0;
+    content: '';
+    left: 0;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 }
 
-@keyframes blur {
-  50% { filter: blur(1px); }
-  60% { filter: blur(2px); }
-  70% { filter: blur(3px); }
-  80% { filter: blur(4px); }
-  90% { filter: blur(5px); }
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
 }
+
 
 label:hover + div {
   opacity: 1;
@@ -49,14 +60,25 @@ label:hover + div {
 
 section {
   :checked + label {
-    color: $red;
-    text-shadow: 0 0 1rem rgba($red, 0.3);
+    color: rgba($brown, 0.2);
+    text-shadow: none;
+    pointer-events: none;
     + div {
-      opacity: 1;
+      opacity: 0;
       perspective: 225px;
       transform: scaleY(-1.1) scaleX(1.1) translateY(0);
       visibility: visible;
       z-index: 400;
+      + embed {
+        display: revert
+      }
+    }
+  }
+
+  @for $puzzle from 1 through 10 {
+    .w#{$puzzle}:checked + label {
+      color: $red;
+      text-shadow: 0 0 1rem rgba($red, 0.3);
     }
   }
 }
@@ -151,12 +173,4 @@ section {
     transform: translateX(-$pX) scaleY(-1.1) scaleX(1.1) translateY(0);
     visibility: hidden;
   }
-}
-
-@keyframes blur {
-  50% { filter: blur(1px); }
-  60% { filter: blur(2px); }
-  70% { filter: blur(3px); }
-  80% { filter: blur(4px); }
-  90%, 100% { filter: blur(5px); }
 }
