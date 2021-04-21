@@ -24,7 +24,19 @@ h3 {
       transform: rotateX(-20deg);
       width: 120px;
     }
+    i {
+      animation: blur $ingametimer $startdelay + 1s steps(5) forwards paused;
+      font-style: normal;
+    }
   }
+}
+
+@keyframes blur {
+  50% { filter: blur(1px); }
+  60% { filter: blur(2px); }
+  70% { filter: blur(3px); }
+  80% { filter: blur(4px); }
+  90% { filter: blur(5px); }
 }
 
 label:hover + div {
@@ -77,7 +89,7 @@ section {
 }
 
 @for $puzzle from 1 through 10 {
-  @for $out from 1 through 10 {
+  @for $out from 1 through 7 {
     #p#{$puzzle}g1:checked ~ .p#{$puzzle}.g#{$out} {
       animation: exit 0.5s 0.5s 1 both;
       pointer-events: none;
@@ -139,4 +151,12 @@ section {
     transform: translateX(-$pX) scaleY(-1.1) scaleX(1.1) translateY(0);
     visibility: hidden;
   }
+}
+
+@keyframes blur {
+  50% { filter: blur(1px); }
+  60% { filter: blur(2px); }
+  70% { filter: blur(3px); }
+  80% { filter: blur(4px); }
+  90%, 100% { filter: blur(5px); }
 }

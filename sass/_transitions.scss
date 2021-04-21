@@ -20,7 +20,8 @@
 
   & ~ section #timer .fill,
   & ~ section #lose,
-  & ~ section #lose h4 {
+  & ~ section #lose h4,
+  & ~ section em > i {
     animation-play-state: running;
   }
 }

@@ -12,11 +12,13 @@ layout: base.njk
     </h1>
 
     <footer>Gamedev.js Jam 2021 | Daniel Marino | Powered by HTML/CSS</footer>
+    <audio src="sound/vinyl.ogg" autoplay>
+    <audio src="sound/wahh.ogg" autoplay>
   </div>
 </label>
 
 <section>
-  <embed src="sound/loop.mp3" width="0" height="0">
+  <embed src="sound/percussion.ogg" width="0" height="0">
 
   <!-- Puzzles -->
   {% for puzzle in puzzles %}
@@ -25,10 +27,10 @@ layout: base.njk
     {% for glyph in puzzle.patterns %}
       <input class="p{{ p }} g{{ loop.index }}" id="p{{ p }}g{{ loop.index }}" name="p{{ p }}" type="radio">
       <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph>{{ glyph[0] }}</label>
-      <div class="p{{ p }} r{{ loop.index }}"><em>{{ glyph[1] }}</em></div>
+      <div class="p{{ p }} r{{ loop.index }}"><em><i>{{ glyph[1] }}</i></em></div>
     {% endfor %}
 
-    <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }} — Select the mismatched Hieroglyph</h3>
+    <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }} — Select the mismatched hieroglyph</h3>
     <embed class="s{{ p }}" src="sound/ding.mp3" width="0" height="0">
   {% endfor %}
 
