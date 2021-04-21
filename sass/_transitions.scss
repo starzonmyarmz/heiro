@@ -20,7 +20,7 @@
 
   & ~ section #timer .fill,
   & ~ section #lose,
-  & ~ section #lose h4,
+  & ~ section #lose .card,
   & ~ section em > i {
     animation-play-state: running;
   }
@@ -37,7 +37,7 @@
   }
 
   & ~ #win,
-  & ~ #win h4 {
+  & ~ #win .card {
     animation-play-state: running !important;
   }
 }

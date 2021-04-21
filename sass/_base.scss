@@ -50,6 +50,12 @@ section {
   grid-template-rows: auto 1fr repeat(2, 140px) 1fr 1fr;
 }
 
+small {
+  display: block;
+  line-height: 1.3;
+  margin-top: 0.5rem;
+}
+
 hr {
   @extend %fixed;
   animation: bg 3s steps(5) infinite;
@@ -69,4 +75,30 @@ hr {
   60%  { background-position: 2% 3%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   80%  { background-position: 67% 99%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
   100% { background-position: 0% 0%, -32px 50%, calc(100% + 37px) 50%, 50% 50%; }
+}
+
+// Card Flip
+
+.card {
+  background-color: transparent;
+  perspective: 1000px;
+  &:hover .card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
+
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
 }

@@ -5,15 +5,26 @@
   visibility: hidden;
   z-index: 1000;
 
-  h4 {
+  .card {
     animation: drop 0.5s $ingametimer + $startdelay + 2s ease-in both paused;
-    background: url('img/lose.webp') 50% 50% no-repeat;
-    background-size: contain;
-    color: #845c43;
-    font-size: 200px;
-    line-height: 1;
-    margin: 0;
-    padding: 0px 80px 60px
+    height: 190px;
+    width: 360px;
+
+    .card-front {
+      background: url('img/lose.webp') 50% 50% no-repeat;
+      background-size: contain;
+      color: lighten($brown, 10%);
+      font-size: 200px;
+      line-height: 0.7;
+    }
+
+    .card-back {
+      background: url('img/lose.webp') 50% 50% no-repeat;
+      background-size: contain;
+      display: grid;
+      place-items: center;
+      transform: rotateY(180deg);
+    }
   }
 
   &:hover embed {
@@ -39,7 +50,7 @@
     visibility: hidden;
   }
   to {
-    opacity: 1;
+    opacity: 0.8;
     visibility: visible;
   }
 }

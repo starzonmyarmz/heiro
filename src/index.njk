@@ -11,7 +11,6 @@ layout: base.njk
       <div><em><b>H</b>ierogl<i>y</i>ph</em></div>
     </h1>
 
-    <footer>Gamedev.js Jam 2021 | Daniel Marino | Powered by HTML/CSS</footer>
     <audio src="sound/vinyl.ogg" autoplay>
     <audio src="sound/wahh.ogg" autoplay>
   </div>
@@ -43,7 +42,18 @@ layout: base.njk
   <!-- Win -->
   <div id="win">
     <div>
-      <h4>𓀠</h4>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">𓀠</div>
+          <div class="card-back">
+            <div>
+              “Celebrate”
+              <small>Gamedev.js Jam 2021 <br> Daniel Marino</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer>
         Refresh the browser to play again
       </footer>
@@ -53,7 +63,18 @@ layout: base.njk
   <!-- Lose -->
   <div id="lose">
     <div>
-      <h4>𓀿</h4>
+      <div class="card">
+        <div class="card-inner">
+          <div class="card-front">𓀿</div>
+          <div class="card-back">
+            <div>
+              Death”
+              <small>Gamedev.js Jam 2021 <br> Daniel Marino</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
       <footer>
         Refresh the browser to try again
         <embed src="sound/lose.ogg" width="0" height="0">
