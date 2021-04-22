@@ -11,11 +11,8 @@ $brown: #4b2512;
 $pX: 1rem;
 
 %bg {
-  background:
-    url('img/left_column.webp') -32px 50% no-repeat,
-    url('img/right_column.webp') calc(100% + 37px) 50% no-repeat,
-    url('img/bg.webp') 50% 50% no-repeat;
-  background-size: 11%, 11%, cover;
+  background: url('img/bg.webp') 50% 50% no-repeat;
+  background-size: cover;
 }
 
 %fixed {
