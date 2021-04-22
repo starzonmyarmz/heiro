@@ -111,7 +111,6 @@ small {
 // Grain
 
 .grain {
-  animation: grainin $ingametimer $startdelay + 1s forwards paused;
   opacity: 0.1;
   pointer-events: none;
   z-index: 2000;
@@ -121,19 +120,6 @@ small {
     animation: grain 3s steps(5) infinite;
     background: url('img/grain.webp');
     background-size: 500px;
-  }
-}
-
-@keyframes grainin {
-  0% {
-    opacity: 0.1;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  90%, 100% {
-    background-size: 100%;
-    opacity: 0.2;
   }
 }
 
