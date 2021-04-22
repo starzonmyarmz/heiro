@@ -7,6 +7,11 @@
     pointer-events: none;
   }
 
+  & ~ section {
+    opacity: 1;
+    visibility: visible;
+  }
+
   & ~ section > .music {
     display: revert;
   }
