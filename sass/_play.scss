@@ -83,6 +83,17 @@ section {
   }
 }
 
+:checked:not(.w1) ~
+:checked:not(.w1) ~
+:checked:not(.w1) {
+  ~ #lose-checked {
+    animation-play-state: running;
+  }
+  ~ #lose-checked .card {
+    animation-play-state: running;
+  }
+}
+
 @for $puzzle from 1 through $puzzles {
   .p#{$puzzle} {
     display: none;

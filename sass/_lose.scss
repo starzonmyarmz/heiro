@@ -1,12 +1,13 @@
-#lose {
+#lose,
+#lose-checked {
   @extend %bg;
   @extend %fixed;
-  animation: lose 0.5s $ingametimer + $startdelay + 1s both paused;
+  animation: lose 0.5s both paused;
   visibility: hidden;
   z-index: 1000;
 
   .card {
-    animation: drop 0.5s $ingametimer + $startdelay + 2s ease-in both paused;
+    animation: drop 0.5s ease-in both paused;
     height: 190px;
     width: 360px;
 
@@ -29,6 +30,20 @@
 
   &:hover embed {
     display: revert;
+  }
+}
+
+#lose {
+  animation-delay: $ingametimer + $startdelay + 1s;
+  .card {
+    animation-delay: $ingametimer + $startdelay + 2s;
+  }
+}
+
+#lose-checked {
+  animation-delay: 1s;
+  .card {
+    animation-delay: 2s;
   }
 }
 
