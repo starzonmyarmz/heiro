@@ -75,7 +75,7 @@ section {
     }
   }
 
-  @for $puzzle from 1 through 10 {
+  @for $puzzle from 1 through $puzzles {
     .w#{$puzzle}:checked + label {
       color: $red;
       text-shadow: 0 0 1rem rgba($red, 0.3);
@@ -83,19 +83,19 @@ section {
   }
 }
 
-@for $puzzle from 1 through 10 {
+@for $puzzle from 1 through $puzzles {
   .p#{$puzzle} {
     display: none;
   }
 }
 
-@for $in from 1 through 10 {
+@for $in from 1 through $puzzles {
   .g#{$in} {
     animation: enter 0.5s 2s 1 both;
   }
 }
 
-@for $puzzle from 1 through 10 {
+@for $puzzle from 1 through $puzzles {
   #p#{$puzzle}g1:checked {
     animation: exit 0.5s 0.5s 1 both;
     pointer-events: none;
@@ -110,8 +110,8 @@ section {
   }
 }
 
-@for $puzzle from 1 through 10 {
-  @for $out from 1 through 7 {
+@for $puzzle from 1 through $puzzles {
+  @for $out from 1 through $puzzles {
     #p#{$puzzle}g1:checked ~ .p#{$puzzle}.g#{$out} {
       animation: exit 0.5s 0.5s 1 both;
       pointer-events: none;
