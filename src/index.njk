@@ -3,7 +3,7 @@ layout: base.njk
 ---
 
 <!-- Title -->
-<input type="checkbox" id="start" autofocus>
+<input type="checkbox" id="start" tabindex="-1">
 <label for="start">
   <div>
     <h1>
@@ -11,28 +11,32 @@ layout: base.njk
       <div><em><b>H</b>iero</em></div>
     </h1>
   </div>
+
+  <footer>
+    Click anywhere to begin.
+  </footer>
 </label>
 
-<embed src="sound/wahh.ogg" width="0" height="0">
+<embed src="sound/wahh.ogg" width="0" height="0" tabindex="-1">
 
 <section>
-  <embed class="music" src="sound/percussion.ogg" width="0" height="0">
+  <embed class="music" src="sound/percussion.ogg" width="0" height="0" tabindex="-1">
 
   <!-- Puzzles -->
   {% for puzzle in puzzles %}
     {% set p = loop.index %}
 
     {% for glyph in puzzle.patterns %}
-      <input class="p{{ p }} g{{ loop.index }} {% if loop.index == 1 %}w1{% endif %}" id="p{{ p }}g{{ loop.index }}" type="checkbox">
+      <input class="p{{ p }} g{{ loop.index }} {% if loop.index == 1 %}w1{% endif %}" id="p{{ p }}g{{ loop.index }}" type="checkbox" tabindex="-1">
       <label class="p{{ p }} g{{ loop.index }} h{{ loop.index }}" for="p{{ p }}g{{ loop.index }}" data-glyph>{{ glyph[0] }}</label>
       <div class="p{{ p }} r{{ loop.index }}"><em><i>{{ glyph[1] }}</i></em></div>
       {% if loop.index != 1 %}
-        <embed src="sound/bou.ogg" width="0" height="0">
+        <embed src="sound/bou.ogg" width="0" height="0" tabindex="-1">
       {% endif %}
     {% endfor %}
 
     <h3 class="p{{ p }} g{{ loop.index }}">Puzzle {{ loop.index }} / {{ puzzles.length }} — Select the mismatched hieroglyph</h3>
-    <embed class="s{{ p }}" src="sound/ding.ogg" width="0" height="0">
+    <embed class="s{{ p }}" src="sound/ding.ogg" width="0" height="0" tabindex="-1">
   {% endfor %}
 
   <!-- Timer -->
@@ -58,7 +62,7 @@ layout: base.njk
 
       <footer>
         Refresh the browser to play again
-        <embed src="sound/win.ogg" width="0" height="0">
+        <embed src="sound/win.ogg" width="0" height="0" tabindex="-1">
       </footer>
     </div>
   </div>
@@ -80,7 +84,7 @@ layout: base.njk
 
       <footer>
         Time’s up. Refresh the browser to try again
-        <embed src="sound/lose.ogg" width="0" height="0">
+        <embed src="sound/lose.ogg" width="0" height="0" tabindex="-1">
       </footer>
     </div>
   </div>
@@ -102,7 +106,7 @@ layout: base.njk
 
       <footer>
         Too many mistakes. Refresh the browser to try again.
-        <embed src="sound/lose.ogg" width="0" height="0">
+        <embed src="sound/lose.ogg" width="0" height="0" tabindex="-1">
       </footer>
     </div>
   </div>

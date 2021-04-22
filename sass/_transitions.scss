@@ -1,8 +1,10 @@
 // Letsago!
 
 #start:checked {
+
   & + label {
     animation: woosh 0.25s 0.25s forwards;
+    pointer-events: none;
   }
 
   & ~ section > .music {
