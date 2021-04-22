@@ -55,6 +55,29 @@ main {
     background-size: 500px;
     opacity: 0.1;
   }
+
+  .load {
+    display: none;
+  }
+
+  .sorry {
+    line-height: 1.3;
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1024px) and (min-height: 600px) {
+  .loading .load {
+    display: block;
+  }
+
+  .loading .sorry {
+    display: none;
+  }
+
+  main {
+    animation-play-state: running;
+  }
 }
 
 @keyframes letsgo {
