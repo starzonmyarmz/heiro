@@ -8,7 +8,7 @@ h3 {
   cursor: pointer;
   font-size: 124px;
   position: relative;
-  transition: all 0.25s;
+  transition: all 0.15s;
 
   & + div {
     @extend %mirrorskew;
